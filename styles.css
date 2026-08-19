@@ -153,51 +153,13 @@ body::before {
   letter-spacing: -0.025em;
 }
 
-.play-mark {
-  width: 1.8rem;
-  height: 2rem;
+.platform-logo {
+  width: 1.9rem;
+  height: 1.9rem;
   flex: 0 0 auto;
-  background: conic-gradient(
-    from -35deg at 35% 50%,
-    #00d7fe 0 25%,
-    #00ef77 0 50%,
-    #ffdc4a 0 75%,
-    #ff3a44 0
-  );
-  clip-path: polygon(0 0, 100% 50%, 0 100%, 22% 50%);
-}
-
-.apple-mark {
-  position: relative;
-  width: 1.75rem;
-  height: 1.75rem;
-  flex: 0 0 auto;
-  margin-top: 0.2rem;
-  border-radius: 52% 48% 55% 45% / 58% 58% 42% 42%;
-  background: #fff;
-}
-
-.apple-mark::before {
-  content: "";
-  position: absolute;
-  width: 0.63rem;
-  height: 0.34rem;
-  top: -0.38rem;
-  left: 0.92rem;
-  border-radius: 100% 0 100% 0;
-  background: #fff;
-  transform: rotate(-28deg);
-}
-
-.apple-mark::after {
-  content: "";
-  position: absolute;
-  width: 0.58rem;
-  height: 0.72rem;
-  top: 0.34rem;
-  right: -0.3rem;
-  border-radius: 50%;
-  background: #050505;
+  object-fit: contain;
+  filter: invert(82%) sepia(48%) saturate(748%) hue-rotate(354deg)
+    brightness(91%) contrast(86%);
 }
 
 .eyebrow,
