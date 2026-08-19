@@ -1,0 +1,245 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, Avenir, "Helvetica Neue", Arial, sans-serif;
+  background: #050505;
+  color: #f7f1e6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% 22%, rgba(205, 154, 42, 0.12), transparent 34rem),
+    #050505;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 32%,
+    rgba(215, 168, 62, 0.16),
+    transparent 42%
+  );
+  animation: reveal-glow 1.8s 200ms ease-out both;
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.logo {
+  width: min(30rem, 90vw);
+  height: auto;
+  animation: reveal-logo 1.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.copy {
+  max-width: 43rem;
+}
+
+.copy > * {
+  animation: reveal-copy 850ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.copy .eyebrow {
+  animation-delay: 350ms;
+}
+
+.copy h1 {
+  animation-delay: 470ms;
+}
+
+.copy .intro {
+  animation-delay: 590ms;
+}
+
+.copy .coming-soon {
+  animation-delay: 710ms;
+}
+
+.download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 1.4rem;
+  animation: reveal-copy 850ms 820ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.download-button {
+  width: 11.6rem;
+  min-height: 3.55rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.65rem 1rem;
+  color: #fff;
+  text-align: left;
+  text-decoration: none;
+  background: #050505;
+  border: 1px solid rgba(215, 168, 62, 0.7);
+  border-radius: 0.6rem;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.3);
+  transition: transform 180ms ease, border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.download-button:hover {
+  transform: translateY(-2px);
+  background: #161616;
+  border-color: #d7a83e;
+}
+
+.download-button small,
+.download-button strong {
+  display: block;
+}
+
+.download-button small {
+  color: #fff;
+  font-size: 0.61rem;
+  line-height: 1;
+  letter-spacing: 0.025em;
+}
+
+.download-button strong {
+  margin-top: 0.16rem;
+  font-size: 1.18rem;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.play-mark {
+  width: 1.8rem;
+  height: 2rem;
+  flex: 0 0 auto;
+  background: conic-gradient(
+    from -35deg at 35% 50%,
+    #00d7fe 0 25%,
+    #00ef77 0 50%,
+    #ffdc4a 0 75%,
+    #ff3a44 0
+  );
+  clip-path: polygon(0 0, 100% 50%, 0 100%, 22% 50%);
+}
+
+.apple-mark {
+  position: relative;
+  width: 1.75rem;
+  height: 1.75rem;
+  flex: 0 0 auto;
+  margin-top: 0.2rem;
+  border-radius: 52% 48% 55% 45% / 58% 58% 42% 42%;
+  background: #fff;
+}
+
+.apple-mark::before {
+  content: "";
+  position: absolute;
+  width: 0.63rem;
+  height: 0.34rem;
+  top: -0.38rem;
+  left: 0.92rem;
+  border-radius: 100% 0 100% 0;
+  background: #fff;
+  transform: rotate(-28deg);
+}
+
+.apple-mark::after {
+  content: "";
+  position: absolute;
+  width: 0.58rem;
+  height: 0.72rem;
+  top: 0.34rem;
+  right: -0.3rem;
+  border-radius: 50%;
+  background: #050505;
+}
+
+.eyebrow,
+.coming-soon {
+  color: #d7a83e;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.9rem 0 1.1rem;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.intro {
+  max-width: 35rem;
+  margin: 0 auto;
+  color: #c8c1b6;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.coming-soon {
+  margin: 2rem 0 0;
+}
+
+@keyframes reveal-logo {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(2.75rem) scale(0.84);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes reveal-copy {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-glow {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo,
+  .copy > *,
+  .download-buttons,
+  body::before {
+    animation: none;
+  }
+}
